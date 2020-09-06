@@ -1,15 +1,20 @@
-# [YouTube Tutorial](https://www.youtube.com/playlist?list=PL3KAvm6JMiowqFTXj3oPQkhP7aCgRHFTm)
-I created a Youtube code along tutorial for this project. Click the link above to view!
+# React Portfolio Site
+A React based personal portfolio app
 
-# react-portfolio-starter
-A React based personal portfolio app using create-react-app and React Router v4.
+## Home Page
 
-# Tools
+<img src=https://i.imgur.com/kRhetWC.png>
+
+## Resume Page
+
+<img src=https://i.imgur.com/WfNJUrp.png>
+
+## Tools
 * create-react-app cli
 * React MDL material design
 * React Router v4
 
-# Start App
+## Start App
 Clone repo, install, cd into folder and run:
 ```git
 npm install
