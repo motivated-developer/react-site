@@ -12,7 +12,7 @@ class Experience extends Component {
         <Cell col={8}>
           <h4 style={{ marginTop: "0px" }}>
             <img
-              alt="image"
+              alt="myimage"
               src={this.props.image}
               style={{ height: "50px" }} />
 
