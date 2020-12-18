@@ -15,9 +15,9 @@ class Projects extends Component {
         <div className="projects-grid">
           {/* Project 1 */}
           <Card shadow={5} style={{ minWidth: '450', margin: 'auto' }}>
-            <CardTitle style={{ color: '#fff', height: '176px', background: 'url(https://xtnotes-1255646395.coshk.myqcloud.com/images/react-1.svg) center / cover' }} >React Project #1</CardTitle>
+            <CardTitle style={{ color: 'black', height: '176px', background: 'url(https://camo.githubusercontent.com/c76b1b55615ece4f4ca8feed725b8e4d5ad334c5ce4ddc27cd4bbcef780b168f/68747470733a2f2f692e696d6775722e636f6d2f663239454339712e706e67) center / 80px no-repeat' }} ></CardTitle>
             <CardText>
-              React App - E-Commerce app for Revival Apparel Co.
+              E-Commerce app for Revival Apparel Co. built in Flutter
             </CardText>
             <CardActions border>
               <Button colored href="https://github.com/Oreo59/revival-app">GitHub</Button>
