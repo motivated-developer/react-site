@@ -117,6 +117,26 @@
 
 /* About Me Page */
 
+/* .aboutme-page {
+  width: 90%;
+  margin: auto;
+  padding: 20px 3px 3px 3px;
+  border: 2px solid #e22947;
+} */
+
 .about-me-header {
   text-align: center;
+}
+
+h2.about-me-header {
+  font-weight: bold;
+}
+
+h3.about-me-header {
+  font-weight: bold;
+}
+
+.aboutme-background {
+  background: lightgray;
+  padding: 2em;
 }
