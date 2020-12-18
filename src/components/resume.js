@@ -20,27 +20,36 @@ class Resume extends Component {
             <h2 style={{ paddingTop: "2em" }}>Ryan Charnoky</h2>
             <h4 style={{ color: "gray" }}>Programmer</h4>
             <hr style={{ borderTop: '3px solid #833fb2', width: "50%" }} />
-            <p>Currently studying abroad at Karlsruhe Institute of Technology!</p>
+            <p>Ambitious college senior with a passion for learning and improvement!</p>
             <hr style={{ borderTop: '3px solid #833fb2', width: "50%" }} />
             {/* <h5>Address</h5>
             <p>1 Hacker Way, Menlo Park, 94025</p> */}
-            <h5>Phone</h5>
-            <p>(407) 421-8341</p>
+            {/* <h5>Phone</h5>
+            <p>(407) 421-****</p> */}
             <h5>Email</h5>
             <p>rcharnoky@gmail.com</p>
             <h5>Web</h5>
-            <p>mywebsite.com</p>
+            <p>https://unruffled-yonath-e1bcf6.netlify.app/resume</p>
             <hr style={{ borderTop: '3px solid #833fb2', width: "50%" }} />
           </Cell>
 
           <Cell className="resume-right-col" col={8}>
             <h2>Education</h2>
             <Education
-              startYear={2015}
-              endYear={2021}
+              startYear={""}
+              endYear={"Graduate in May 2021"}
               schoolName="The University of Georgia"
               schoolDescription="Duel Degree Program: 1. Computer Systems Enginieering 2. German"
             />
+
+            <Education
+              startYear={2019}
+              endYear={2020}
+              schoolName="Karlsruhe Institute of Technology"
+              schoolDescription="Study aborad for one year in Karlsruhe, Germany"
+            />
+
+
             <hr style={{ borderTop: '3px solid #e22947' }} />
 
             <h2>Experience</h2>
@@ -88,6 +97,15 @@ class Resume extends Component {
               jobDescription2="Adopted management practices by engaging in Agile/Scrum events, even leading two daily Scrum meetings"
             />
 
+            <Experience
+              startYear={"May 2019"}
+              endYear={"July 2019"}
+              image={}
+              jobName="First Data/Fiserv - Front End Developer"
+              jobDescription="Developed an internal web application in React to replace the legacy system"
+              jobDescription2="Contributed to a reporting and data visualization intern project"
+            />
+
             <hr style={{ borderTop: '3px solid #e22947' }} />
 
             <h2>Skills</h2>
@@ -99,15 +117,15 @@ class Resume extends Component {
             />
             <Skills
               skill="Javascript"
-              progress={55}
+              progress={45}
             />
             <Skills
               skill="HTML/CSS"
-              progress={60}
+              progress={50}
             />
             <Skills
               skill="React"
-              progress={70}
+              progress={60}
             />
             <Skills
               skill="AWS"
