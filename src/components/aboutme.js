@@ -12,7 +12,7 @@ class About extends Component {
             <h2 className="about-me-header">Ambitious & Motivated</h2>
             <h4 className="about-me-header" style={{padding: '40px'}}>
               Currently finishing my duel degree in Computer Systems Engineering and German.  
-              I love a fast paced and cutting edge environment, and that's where I found programming.  
+              I love a fast paced and cutting edge environment, and that's how I found programming.  
               With each new project or internship, I immerse myself in a new technology and figure it out.  
               Besides programming, I study German and love learning about new cultures and meeting new people.  
               After work you can find me playing sports or working out, or playing with my three dogs.  
