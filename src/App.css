@@ -1,13 +1,33 @@
 .header-color {
-  background: #833ab4;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #833ab4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fcb045,
+    #fd1d1d,
+    #833ab4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fcb045,
+    #fd1d1d,
+    #833ab4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .landing-grid {
-  background: #833ab4;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #833ab4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fcb045,
+    #fd1d1d,
+    #833ab4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fcb045,
+    #fd1d1d,
+    #833ab4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   text-align: center;
   position: fixed;
   top: 0;
@@ -16,18 +36,24 @@
   height: 100%;
 }
 
+/* Projects Page */
+
 .projects-grid {
   display: flex;
 }
 
-/* Resume Page css */
+.button-area {
+  text-align: center;
+}
+
+/* Resume Page */
 .resume-right-col {
   background: #27221f;
   color: white;
   padding: 2em;
 }
 
-/* contact page css */
+/* contact page */
 
 .contact-body {
   margin: auto;
@@ -68,8 +94,7 @@
   padding-right: 5rem;
 }
 
-
-/* contact page css */
+/* contact page */
 
 .avatar-img {
   height: 250px;
@@ -78,7 +103,7 @@
 
 .banner-text {
   background-color: black;
-  opacity: .8;
+  opacity: 0.8;
   width: 75%;
   margin: auto;
   border-radius: 10px;
@@ -105,7 +130,7 @@
 .social-links {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 30%;
   margin: auto;
 }
 
@@ -124,19 +149,45 @@
   border: 2px solid #e22947;
 } */
 
-.about-me-header {
+.aboutme-header {
   text-align: center;
 }
 
-h2.about-me-header {
+.aboutme-text {
+  text-align: center;
+  width: 80%;
+}
+
+h2.aboutme-header,
+h3.aboutme-header {
   font-weight: bold;
 }
 
-h3.about-me-header {
-  font-weight: bold;
+h4.aboutme-header {
+  padding: 40px;
 }
 
 .aboutme-background {
   background: lightgray;
   padding: 2em;
+}
+
+.interest {
+  margin-bottom: 3px;
+}
+
+/* Dynasty Dawgs Page */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form input {
+  width: 300px;
+  height: 60px;
+  margin: 10px;
+  font-size: 25px;
 }
