@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /src/server/node_modules
+/server-test
 
 # testing
 /coverage

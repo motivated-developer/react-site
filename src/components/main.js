@@ -6,7 +6,7 @@ import AboutMe from './aboutme';
 import Contact from './contact';
 import Projects from './projects';
 import Resume from './resume';
-import DynastyDawgs from './dynastyDawgs';
+import TradeInput from '../dynasty/newtrade/newtrade.tsx';
 
 const Main = () => (
   <Routes>
@@ -15,7 +15,7 @@ const Main = () => (
     <Route path="/contact" element={<Contact />} />
     <Route path="/projects" element={<Projects />} />
     <Route path="/resume" element={<Resume />} />
-    <Route path="/dynastydawgs" element={<DynastyDawgs />} />
+    <Route path="/newtrade" element={<TradeInput />} />
   </Routes>
 );
 

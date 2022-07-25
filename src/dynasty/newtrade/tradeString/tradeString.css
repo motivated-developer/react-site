@@ -1,0 +1,18 @@
+.trade-summary {
+  text-align: center;
+}
+
+.sends-receives-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sends-receives-lists {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.assets-list {
+  text-align: start;
+  padding: 7px;
+}
