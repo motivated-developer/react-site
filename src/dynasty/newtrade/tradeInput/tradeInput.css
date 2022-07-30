@@ -1,5 +1,6 @@
 .trade-input {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
 }
@@ -8,4 +9,17 @@
   font-size: 20px;
   padding-top: 8px;
   padding-bottom: 8px;
+}
+
+.players-group,
+.picks-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.player-selections,
+.pick-selections {
+  padding-bottom: 5px;
 }

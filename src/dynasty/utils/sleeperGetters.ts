@@ -2,6 +2,7 @@
 import playerData from '../playerData/playerData.ts';
 
 const leagueId = '846905968229986304';
+const draftId = '846905968229986305';
 
 export const getTeams = async () => {
   try {
@@ -75,4 +76,52 @@ export const getRoster = (teamId: string) => {
   });
 
   return roster;
+};
+
+export const getPicks = async () => {
+  try {
+    const response = await fetch(
+      `https://api.sleeper.app/v1/draft/${draftId}`,
+      {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Error! status:  ${response.status}`);
+    }
+
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    console.log('Error: ', err);
+  }
+};
+
+export const getTradedPicks = async () => {
+  try {
+    const response = await fetch(
+      `https://api.sleeper.app/v1/draft/${draftId}/traded_picks`,
+      {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Error! status:  ${response.status}`);
+    }
+
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    console.log('Error: ', err);
+  }
 };

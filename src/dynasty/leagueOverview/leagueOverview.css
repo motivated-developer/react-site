@@ -1,0 +1,25 @@
+.title {
+  text-align: center;
+}
+
+.uga-background {
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* height: 100%; */
+  opacity: 0.6;
+  position: absolute;
+  background-size: cover;
+}
+
+.content-box {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 80%;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
+.teams-card {
+}

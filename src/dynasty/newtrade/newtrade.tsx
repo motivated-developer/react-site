@@ -7,7 +7,7 @@ import TradeInput from './tradeInput/tradeInput.tsx';
 // @ts-ignore
 import TradeString from './tradeString/tradeString.tsx';
 // @ts-ignore
-import { getTeams, getSingleTeam, getRoster } from '../utils/sleeperGetters.ts';
+import { getTeams, getPicks, getRoster } from '../utils/sleeperGetters.ts';
 
 interface teamFormat {
   metadata?: {
@@ -28,22 +28,19 @@ function NewTrade() {
   const [roster1, setRoster1] = useState<object[]>([{}]);
   const [roster2, setRoster2] = useState<object[]>([{}]);
 
-  // const roster1 = [
-  //   { value: 'patrick mahomes', label: 'patrick mahomes' },
-  //   { value: 'tom brady', label: 'tom brady' },
-  //   { value: 'mike williams', label: 'mike williams' },
-  // ];
-
-  // const roster2 = [
-  //   { value: 'patrick mahomes', label: 'patrick mahomes' },
-  //   { value: 'tom brady', label: 'tom brady' },
-  //   { value: 'mike williams', label: 'mike williams' },
-  // ];
-
   const draftPicks = [
-    { value: 'first rounder', label: 'first rounder' },
-    { value: 'second rounder', label: 'second rounder' },
-    { value: 'third rounder', label: 'third rounder' },
+    { value: '2022 1st', label: '2022 1st' },
+    { value: '2022 2nd', label: '2022 2nd' },
+    { value: '2022 3rd', label: '2022 3rd' },
+    { value: '2022 4th', label: '2022 4th' },
+    { value: '2023 1st', label: '2023 1st' },
+    { value: '2023 2nd', label: '2023 2nd' },
+    { value: '2023 3rd', label: '2023 3rd' },
+    { value: '2023 4th', label: '2023 4th' },
+    { value: '2023 1st', label: '2023 1st' },
+    { value: '2023 2nd', label: '2023 2nd' },
+    { value: '2023 3rd', label: '2023 3rd' },
+    { value: '2023 4th', label: '2023 4th' },
   ];
 
   const updateTrade = (
@@ -53,9 +50,11 @@ function NewTrade() {
     switch (updateCategory) {
       case 'team1':
         setTeam1(selection.label);
+        fillRoster(selection.value, 'roster1');
         break;
       case 'team2':
         setTeam2(selection.label);
+        fillRoster(selection.value, 'roster2');
         break;
       case 'players1':
         const addNewPlayer1 = [...players1, selection.value];
@@ -79,6 +78,7 @@ function NewTrade() {
   };
 
   const fillRoster = (teamId: string, rosterToSet: string) => {
+    console.log('incoming params', teamId, rosterToSet);
     getRoster(teamId).then((roster: any) => {
       const formattedRoster: object[] = [];
 
@@ -92,12 +92,14 @@ function NewTrade() {
         setRoster1(formattedRoster);
       }
       if (rosterToSet === 'roster2') {
-        setRoster1(roster);
+        setRoster2(formattedRoster);
       }
     });
   };
 
   useEffect(() => {
+    getPicks();
+
     getTeams().then((teamsRaw: object[]) => {
       const teams = teamsRaw.map((teamData: teamFormat) => {
         const teamObj = {
@@ -109,7 +111,6 @@ function NewTrade() {
       console.log(teams);
       setTeams(teams);
     });
-    fillRoster('700570288613572608', 'roster1');
   }, []);
 
   return (
