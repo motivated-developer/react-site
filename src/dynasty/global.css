@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Reedo';
+  src: local('Reedo') url('./fonts/reedoRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Reedo';
+  src: local('Reedo') url('./fonts/reedoBold.woff') format('woff');
+}

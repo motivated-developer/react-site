@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Reedo';
+  src: local('Reedo'), url(../../fonts/reedoRegular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Reedo';
+  src: local('Reedo'), url(../../fonts/reedoBold.woff) format('woff');
+}
+
+.content-box {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 80%;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
+.teams-header {
+  text-align: center;
+  color: #ba0c2f;
+  margin-bottom: 5px;
+  font-family: 'Reedo';
+}

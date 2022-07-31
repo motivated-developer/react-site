@@ -1,0 +1,39 @@
+#football-icon {
+  color: #825736;
+  margin-right: 5px;
+}
+
+.separater {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 28px;
+  border-top: 1px solid black;
+}
+
+#separater-2 {
+  margin-top: 20px;
+}
+
+.team-owner {
+  width: 50%;
+  margin: auto;
+}
+
+#user-icon {
+  text-align: center;
+  /* color: #ba0c2f; red UGA color*/
+  color: black;
+  margin-right: 5px;
+}
+
+#roster-button {
+  /* padding-top: 15px; */
+}
+
+#roster-arrow {
+  padding-right: 5px;
+}
+
+.right-arrow {
+  margin-right: 5px;
+}

@@ -1,5 +1,21 @@
+/* @import url('../global.css'); */
+
+@font-face {
+  font-family: 'Reedo';
+  src: local('Reedo'), url(../fonts/reedoRegular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Reedo';
+  src: local('Reedo'), url(../fonts/reedoBold.woff) format('woff');
+}
+
 .title {
   text-align: center;
+  font-family: 'Reedo';
+  text-shadow: 2px 2px 1px rgb(0 0 0 / 20%);
+  font-size: 80px;
+  padding-bottom: 2%;
 }
 
 .uga-background {
@@ -10,16 +26,9 @@
   opacity: 0.6;
   position: absolute;
   background-size: cover;
+  filter: grayscale(50%);
 }
 
-.content-box {
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  width: 80%;
-  align-content: space-between;
-  justify-content: space-between;
-}
-
-.teams-card {
+.hidden {
+  display: none;
 }
