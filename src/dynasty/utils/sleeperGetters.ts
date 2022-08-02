@@ -1,5 +1,5 @@
 // @ts-ignore
-import playerData from '../playerData/playerData.ts';
+import playerRawData from '../playerData/playerData.json';
 
 const leagueId = '846905968229986304';
 const draftId = '846905968229986305';
@@ -66,7 +66,8 @@ export const getRoster = (teamId: string) => {
   const roster = getSingleTeam(teamId).then((team) => {
     const rosterRawData = team[0].players;
     const rosterData: string[] = [];
-    rosterRawData.forEach((playerCode: string) =>
+    const playerData: any = playerRawData;
+    rosterRawData.forEach((playerCode: keyof typeof playerData) =>
       rosterData.push(
         playerData[playerCode].full_name ||
           playerData[playerCode].first_name + ' D/ST'

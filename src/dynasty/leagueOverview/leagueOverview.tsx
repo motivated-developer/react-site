@@ -1,35 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import './leagueOverview.css';
-import playerData from '../playerData/playerData.ts';
 
+import RosterDisplay from './rosterDisplay/rosterDisplay';
 import OverviewCard from './overviewCard/overviewCard';
 import TeamInfo from './teamInfo/teamInfo';
-import PlayerInfo from './playerInfo/playerInfo';
 import { getTeams, getSingleTeam } from '../utils/sleeperGetters';
 import { team } from '../interfaces/team.interface';
 
-interface player {
-  full_name: string;
-  weight: string;
-}
-
 export default function LeagueOverview() {
   const [teams, setTeams] = useState<React.ReactNode[]>([]);
-  const [roster, setRoster] = useState<React.ReactNode[]>([]);
-  const [rosterOpen, toggleRosterOpen] = useState<boolean>(true);
+  const [roster, setRoster] = useState<React.ReactNode>();
+  const [rosterOpen, toggleRosterOpen] = useState<boolean>(false);
 
   const renderTeams = (teamsData: team[]) => {
     let tempTeams: React.ReactNode[] = [];
 
     teamsData.map((team: team) => {
+      console.log(team);
       tempTeams.push(
         <TeamInfo
-          key={team.metadata.team_name + Math.random()}
+          key={team.user_id + Math.random()}
+          userId={team.user_id}
           teamName={team.metadata.team_name}
           owner={team.display_name}
           record="6-4"
           pointsFor={156}
           pointsAgainst={122}
+          handleRosterClick={loadRoster}
         ></TeamInfo>
       );
       // Why doesn't this solution work?
@@ -50,28 +47,22 @@ export default function LeagueOverview() {
   };
 
   const loadTeamRosterContent = (userId: string) => {
-    let tempRoster: React.ReactNode[] = [];
-
     getSingleTeam(userId).then((roster) => {
       console.log('roster', roster);
-      roster[0].players.map((playerNum: string) => {
-        const playerInfo: player = playerData[playerNum];
-        console.log(playerInfo);
-        tempRoster.push(
-          <PlayerInfo
-            key={playerInfo.full_name + Math.random()}
-            name={playerInfo.full_name}
-            weight={playerInfo.weight}
-          ></PlayerInfo>
-        );
-      });
+      const content: any = <RosterDisplay roster={roster}></RosterDisplay>;
+      setRoster(content);
     });
-    setRoster(tempRoster);
+    console.log('Roster has been set');
+  };
+
+  const loadRoster = (rosterId: string) => {
+    toggleRosterOpen(true);
+    loadTeamRosterContent(rosterId);
   };
 
   useEffect(() => {
     getTeams().then((teamsData: team[]) => renderTeams(teamsData));
-    loadTeamRosterContent('609863126183112704');
+    // loadTeamRosterContent('609863126183112704');
   }, []);
 
   return (
@@ -83,10 +74,19 @@ export default function LeagueOverview() {
         className="uga-background"
         src="https://library.sportingnews.com/styles/twitter_card_120x120/s3/2021-11/nakobe-dean-110221-getty-ftr_tuq4hsl74e41bou175ugmjci.jpg?itok=HVK0OFjD"
       ></img>
-      <div>
-        <OverviewCard title="Teams" content={teams}></OverviewCard>
+      <div className="page-content">
+        <OverviewCard
+          title="Teams"
+          content={teams}
+          isClosable={false}
+        ></OverviewCard>
         <div className={rosterOpen ? '' : 'hidden'}>
-          <OverviewCard title={''} content={roster}></OverviewCard>
+          <OverviewCard
+            title={'Roster'}
+            content={roster}
+            isClosable={true}
+            closeRoster={() => toggleRosterOpen(false)}
+          ></OverviewCard>
         </div>
       </div>
     </div>

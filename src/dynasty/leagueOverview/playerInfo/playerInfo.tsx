@@ -12,9 +12,15 @@ interface props {
 
 export default function PlayerInfo(props: props) {
   return (
-    <Accordion>
-      <AccordionSummary>{props.name}</AccordionSummary>
-      <AccordionDetails>Weight: {props.weight}</AccordionDetails>
+    <Accordion
+      sx={{
+        background: 'rgb(158, 162, 162, 0.9)',
+      }}
+    >
+      <AccordionSummary sx={{ marginInline: '1px' }} className="player-name">
+        <div>{props.name}</div>
+      </AccordionSummary>
+      <AccordionDetails>{props.weight} lbs</AccordionDetails>
     </Accordion>
   );
 }

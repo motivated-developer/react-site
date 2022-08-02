@@ -13,7 +13,7 @@
 .title {
   text-align: center;
   font-family: 'Reedo';
-  text-shadow: 2px 2px 1px rgb(0 0 0 / 20%);
+  text-shadow: -2px 2px 1px rgb(0 0 0 / 20%);
   font-size: 80px;
   padding-bottom: 2%;
 }
@@ -27,6 +27,11 @@
   position: absolute;
   background-size: cover;
   filter: grayscale(50%);
+}
+
+.page-content {
+  display: grid;
+  grid: 1fr / 1fr 1fr 1fr;
 }
 
 .hidden {

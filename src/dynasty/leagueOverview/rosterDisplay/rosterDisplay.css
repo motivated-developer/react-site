@@ -1,0 +1,21 @@
+#players-column {
+  display: grid;
+  grid: 1fr / 1fr 1fr;
+  column-gap: 15px;
+  /* flex-direction: row; */
+  text-align: center;
+}
+
+#starters {
+  display: grid;
+  grid: 1fr / 1fr 1fr;
+  column-gap: 5px;
+  padding-top: 5px;
+}
+
+#bench-players {
+  display: grid;
+  grid: 1fr / 1fr 1fr 1fr;
+  column-gap: 5px;
+  padding-top: 5px;
+}

@@ -3,10 +3,15 @@ import './overviewCard.css';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faX } from '@fortawesome/free-solid-svg-icons';
 
 interface props {
   title: string;
-  content: React.ReactNode[];
+  content: React.ReactNode[] | React.ReactNode;
+  handleRosterClick?: Function;
+  isClosable: boolean;
+  closeRoster?: Function;
 }
 
 export default function OverviewCard(props: props) {
@@ -22,6 +27,12 @@ export default function OverviewCard(props: props) {
         >
           <h4 className="teams-header">
             <b>{props.title}</b>
+            <span
+              className={props.isClosable ? 'close-button' : 'hidden'}
+              onClick={() => props.closeRoster?.()}
+            >
+              <FontAwesomeIcon icon={faX}></FontAwesomeIcon>
+            </span>
           </h4>
           <CardContent>{props.content}</CardContent>
         </Card>

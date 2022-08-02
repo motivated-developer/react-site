@@ -3,37 +3,45 @@
   margin-right: 5px;
 }
 
+.owner-name {
+  color: #4b4b4b;
+}
+
 .separater {
   width: 90%;
   margin: auto;
   margin-bottom: 28px;
-  border-top: 1px solid black;
+  border-top: 1px solid #00000026;
 }
 
 #separater-2 {
   margin-top: 20px;
 }
 
-.team-owner {
-  width: 50%;
-  margin: auto;
+.team-record {
+  margin-left: 5px;
+  font-size: 20px;
 }
 
 #user-icon {
   text-align: center;
   /* color: #ba0c2f; red UGA color*/
-  color: black;
   margin-right: 5px;
 }
 
 #roster-button {
+  font-size: 12px;
   /* padding-top: 15px; */
 }
 
-#roster-arrow {
-  padding-right: 5px;
+#placement-icon {
+  padding-right: 17px;
 }
 
 .right-arrow {
   margin-right: 5px;
+}
+
+.hidden {
+  display: none;
 }
