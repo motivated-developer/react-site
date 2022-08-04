@@ -2,6 +2,7 @@ import React from 'react';
 import './rosterDisplay.css';
 
 import { playerDetails } from '../../playerData/playerData';
+// import {playerDataInterface} from '../../playerData/playerData'
 import playerData from '../../playerData/playerData';
 import PlayerInfo from '../playerInfo/playerInfo';
 
@@ -14,57 +15,33 @@ interface props {
 
 export default function RosterDisplay(props: props) {
   const roster = props.roster[0];
-  let starters1: React.ReactNode[] = [];
-  let starters2: React.ReactNode[] = [];
+  let starters: React.ReactNode[] = [];
   let benchPlayers1: React.ReactNode[] = [];
   let benchPlayers2: React.ReactNode[] = [];
-  let benchPlayers3: React.ReactNode[] = [];
+
+  const addPlayer = (player: playerDetails, playerArray: React.ReactNode[]) => {
+    playerArray.push(
+      <PlayerInfo
+        key={player.first_name + Math.random()}
+        name={player.full_name || player.first_name + ' D/ST'}
+        weight={player.weight}
+        college={player.college}
+        age={player.age}
+        team={player.team}
+        yearsExperience={player.years_exp}
+      ></PlayerInfo>
+    );
+  };
 
   roster.players.map((playerNum: any) => {
     // @ts-ignore
     const playerInfo: playerDetails = playerData[playerNum];
     if (roster.starters.includes(playerNum)) {
-      if (starters1.length < 8) {
-        starters1.push(
-          <PlayerInfo
-            key={playerInfo.first_name + Math.random()}
-            name={playerInfo.full_name || playerInfo.first_name + ' D/ST'}
-            weight={playerInfo.weight}
-          ></PlayerInfo>
-        );
-      } else {
-        starters2.push(
-          <PlayerInfo
-            key={playerInfo.first_name + Math.random()}
-            name={playerInfo.full_name || playerInfo.first_name + ' D/ST'}
-            weight={playerInfo.weight}
-          ></PlayerInfo>
-        );
-      }
-    } else if (benchPlayers1.length < 8) {
-      benchPlayers1.push(
-        <PlayerInfo
-          key={playerInfo.first_name + Math.random()}
-          name={playerInfo.full_name || playerInfo.first_name + ' D/ST'}
-          weight={playerInfo.weight}
-        ></PlayerInfo>
-      );
-    } else if (benchPlayers2.length < 8) {
-      benchPlayers2.push(
-        <PlayerInfo
-          key={playerInfo.first_name + Math.random()}
-          name={playerInfo.full_name || playerInfo.first_name + ' D/ST'}
-          weight={playerInfo.weight}
-        ></PlayerInfo>
-      );
+      addPlayer(playerInfo, starters);
+    } else if (benchPlayers1.length < 12) {
+      addPlayer(playerInfo, benchPlayers1);
     } else {
-      benchPlayers3.push(
-        <PlayerInfo
-          key={playerInfo.first_name + Math.random()}
-          name={playerInfo.full_name || playerInfo.first_name + ' D/ST'}
-          weight={playerInfo.weight}
-        ></PlayerInfo>
-      );
+      addPlayer(playerInfo, benchPlayers2);
     }
   });
 
@@ -73,8 +50,7 @@ export default function RosterDisplay(props: props) {
       <div>
         <b>Starters</b>
         <div id="starters">
-          <div>{starters1}</div>
-          <div>{starters2}</div>
+          <div>{starters}</div>
         </div>
       </div>
       <div>
@@ -82,7 +58,6 @@ export default function RosterDisplay(props: props) {
         <div id="bench-players">
           <div>{benchPlayers1}</div>
           <div>{benchPlayers2}</div>
-          <div>{benchPlayers3}</div>
         </div>
       </div>
     </div>

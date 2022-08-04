@@ -51,7 +51,7 @@ export interface playerDetails {
   player_id: string;
 }
 
-interface playerDataInterface {
+export interface playerDataInterface {
   [playerId: string]: playerDetails;
 }
 

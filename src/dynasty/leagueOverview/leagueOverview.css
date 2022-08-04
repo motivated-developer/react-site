@@ -10,6 +10,16 @@
   src: local('Reedo'), url(../fonts/reedoBold.woff) format('woff');
 }
 
+.league-overview-page {
+  background-color: lightgray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
 .title {
   text-align: center;
   font-family: 'Reedo';
@@ -23,15 +33,79 @@
   left: 0;
   z-index: -1;
   /* height: 100%; */
-  opacity: 0.6;
+  opacity: 0.15;
   position: absolute;
   background-size: cover;
-  filter: grayscale(50%);
+  filter: grayscale(80%);
+}
+.victory-text {
+  display: flex;
+  /* justify-content: center; */
+  line-height: normal;
+  align-items: center;
+  box-shadow: -1px 1px 5px 0px black;
+  border-radius: 12px;
+  /* text-align: center; */
+  transform: skewX(-10deg);
+  top: 30%;
+  /* transform: perspective(16px) rotateX(1deg); */
+  width: 43%;
+  /* background-image: linear-gradient(333deg, white, black); */
+  left: 30%;
+  position: absolute;
+  height: 30%;
+  padding: 0px 20px;
+  font-family: 'Reedo';
+  font-size: 100px;
+  background-color: black;
+  color: white;
+  background: -webkit-linear-gradient(red, #333);
+  z-index: 1;
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+}
+
+.homepage-graphic {
+  justify-self: end;
+}
+
+.winding-road {
+  /* padding: 100px 0px 0px 50px; */
+  width: 830px;
+  height: auto;
+  margin-left: -50px;
+  opacity: 0.2;
+  /* transform: scale(0.5); */
+}
+
+.trophy {
+  width: 170px;
+  margin: -90px 0px 0px -50px;
+  height: auto;
+  vertical-align: top;
+  opacity: 0.25;
 }
 
 .page-content {
   display: grid;
-  grid: 1fr / 1fr 1fr 1fr;
+  grid: 1fr / 1fr 2fr;
+  align-items: start;
+  justify-items: center;
+  background-color: lightgray;
+  contain: layout;
+  padding-bottom: 20px;
+}
+
+.roster-card {
+  position: absolute;
+  left: 37%;
+}
+
+#roster-loading {
+  position: absolute;
+  left: 40%;
+  top: 30%;
+  z-index: 2;
 }
 
 .hidden {

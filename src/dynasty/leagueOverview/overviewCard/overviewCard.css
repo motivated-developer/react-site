@@ -11,8 +11,8 @@
 .content-box {
   display: flex;
   flex-direction: row;
-  margin: auto;
-  width: 80%;
+  /* margin: auto; */
+  /* width: 80%; */
   align-content: space-between;
   justify-content: space-between;
 }

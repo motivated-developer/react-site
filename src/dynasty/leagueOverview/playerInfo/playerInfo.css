@@ -1,3 +1,14 @@
 .player-name {
   margin: 1px 0;
 }
+
+.separator {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 28px;
+  border-top: 1px solid #00000026;
+}
+
+.player-stats {
+  text-align: start;
+}

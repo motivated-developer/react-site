@@ -1,21 +1,22 @@
 #players-column {
   display: grid;
-  grid: 1fr / 1fr 1fr;
-  column-gap: 15px;
+  grid: 1fr / 1fr 2fr;
+  column-gap: 40px;
   /* flex-direction: row; */
   text-align: center;
+  margin: 0px 40px;
 }
 
 #starters {
   display: grid;
-  grid: 1fr / 1fr 1fr;
+  grid: 1fr / 1fr;
   column-gap: 5px;
   padding-top: 5px;
 }
 
 #bench-players {
   display: grid;
-  grid: 1fr / 1fr 1fr 1fr;
-  column-gap: 5px;
+  grid: 1fr / 1fr 1fr;
+  column-gap: 20px;
   padding-top: 5px;
 }

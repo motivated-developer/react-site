@@ -9,7 +9,7 @@ import {
   faFootball,
   faUser,
   faChevronRight,
-  faArrowRight,
+  faArrowUpRightFromSquare,
   faRankingStar,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,25 +19,38 @@ interface props {
   owner: string;
   record: string;
   pointsFor: number;
-  pointsAgainst: number;
+  // pointsAgainst: number;
+  streak: string;
+  totalMoves: number;
+  waiverPosition: number;
   handleRosterClick: Function;
 }
 
-export default function TeamInfo(props: props) {
+export default function TeamInfo({
+  userId,
+  teamName,
+  owner,
+  record,
+  pointsFor,
+  streak,
+  totalMoves,
+  waiverPosition,
+  handleRosterClick,
+}: props) {
   const [expanded, setExpanded] = useState<boolean>(false);
 
-  const handleChange =
-    () => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      if ((event.target as HTMLElement).id != 'roster-button') {
-        // Prevent collapse from accordion on button click
-        setExpanded(!expanded);
-      }
-    };
+  const handleChange = () => (event: React.SyntheticEvent) => {
+    if ((event.target as HTMLElement).id != 'roster-button') {
+      // Prevent collapse from accordion on button click
+      setExpanded(!expanded);
+    }
+  };
 
   return (
     <Accordion
       sx={{
-        background: 'rgb(158, 162, 162, 0.9)',
+        // background: 'rgb(158, 162, 162, 0.9)',
+        background: 'white',
       }}
       onChange={handleChange()}
     >
@@ -45,29 +58,35 @@ export default function TeamInfo(props: props) {
         <div>
           <div className="team-title">
             <FontAwesomeIcon id="football-icon" icon={faFootball} />
-            <b>{props.teamName || 'Please Give Your Team A Name, Daniel'}</b>
+            <b>{teamName || 'Please Give Your Team A Name, Daniel'}</b>
           </div>
           <div className={`owner-name ${!expanded ? 'hidden' : ''}`}>
             <div>
               <FontAwesomeIcon id="user-icon" icon={faUser}></FontAwesomeIcon>
-              {props.owner}
+              {owner}
             </div>
             <div>
               <Button
                 onClick={(e) => {
                   e.stopPropagation();
-                  props.handleRosterClick(props.userId);
+                  handleRosterClick(userId);
                 }}
+                endIcon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} />}
                 sx={{
                   // transform: 'translate(-8px, 0px)',
-                  color: 'black',
+                  color: 'white',
                   fontFamily: 'inherit',
                   textTransform: 'none',
-                  backgroundColor: 'rgb(0 0 0 / 7%)',
+                  // backgroundColor: 'rgb(0 0 0 / 7%)',
+                  backgroundColor: '#ba0c2f',
                   marginTop: '20px',
                   boxShadow: '-1px 2px 3px 0px rgb(0 0 0 / 25%)',
                   // paddingRight: '24px',
                   borderRadius: '7px',
+                  '&:hover': {
+                    background: 'black',
+                    color: '#ba0c2f',
+                  },
                 }}
               >
                 <div id="roster-button">Roster</div>
@@ -77,37 +96,45 @@ export default function TeamInfo(props: props) {
         </div>
       </AccordionSummary>
       <AccordionDetails className="team-details">
-        <div className="separater"></div>
+        <div className="separator"></div>
         <div className="team-record">
           <div>
             <FontAwesomeIcon
               id="placement-icon"
               icon={faRankingStar}
             ></FontAwesomeIcon>
-            {`${props.record} (1st)`}
+            {/* {`${record} (1st)`} */}
+            {record}
           </div>
         </div>
-        <div className="separater" id="separater-2"></div>
+        <div className="separator" id="separator-2"></div>
         <div>
           <FontAwesomeIcon
             className="right-arrow"
             icon={faChevronRight}
           ></FontAwesomeIcon>
-          Points For: {props.pointsFor}
+          Points For: {pointsFor}
         </div>
         <div>
           <FontAwesomeIcon
             className="right-arrow"
             icon={faChevronRight}
           ></FontAwesomeIcon>
-          Points Against: {props.pointsAgainst}
+          Streak: {streak}
         </div>
         <div>
           <FontAwesomeIcon
             className="right-arrow"
             icon={faChevronRight}
           ></FontAwesomeIcon>
-          2021 Finish: {props.pointsAgainst}
+          Waiver Position: {waiverPosition}
+        </div>
+        <div>
+          <FontAwesomeIcon
+            className="right-arrow"
+            icon={faChevronRight}
+          ></FontAwesomeIcon>
+          Total Moves: {totalMoves}
         </div>
       </AccordionDetails>
     </Accordion>

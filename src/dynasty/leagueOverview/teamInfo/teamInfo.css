@@ -1,5 +1,5 @@
 #football-icon {
-  color: #825736;
+  /* color: #825736; */
   margin-right: 5px;
 }
 
@@ -7,14 +7,14 @@
   color: #4b4b4b;
 }
 
-.separater {
+.separator {
   width: 90%;
   margin: auto;
   margin-bottom: 28px;
   border-top: 1px solid #00000026;
 }
 
-#separater-2 {
+#separator-2 {
   margin-top: 20px;
 }
 
