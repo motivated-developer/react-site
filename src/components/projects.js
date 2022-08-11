@@ -33,7 +33,7 @@ class Projects extends Component {
                   'url(https://camo.githubusercontent.com/865ca0be0c737e9c12ed0abd5afd870929a86ec4d527cdc0f0c06ba93ec556d8/68747470733a2f2f692e696d6775722e636f6d2f6b5268657457432e706e67) center / 80px no-repeat',
               }}
             ></CardTitle>
-            <CardText>This website</CardText>
+            <CardText>`Personal website (this website)`</CardText>
             <CardActions className="button-area" border>
               <Button colored href="https://github.com/Oreo59/revival-app">
                 GitHub
@@ -56,13 +56,23 @@ class Projects extends Component {
                   'url(https://xtnotes-1255646395.coshk.myqcloud.com/images/react-1.svg) center / cover',
               }}
             >
-              React Project #2
+              DynastyDawgs Website
             </CardTitle>
-            <CardText>Coming soon</CardText>
+            <CardText>Fantasy Football Website</CardText>
             <CardActions className="button-area" border>
-              <Button colored>GitHub</Button>
-              {/* <Button colored>CodePen</Button>
-              <Button colored>Live Demo</Button> */}
+              <Button
+                colored
+                href="https://github.com/motivated-developer/dynastyDawgs"
+              >
+                GitHub
+              </Button>
+              <Button
+                colored
+                href="https://shiny-kringle-42e668.netlify.app/leagueoverview"
+              >
+                Visit Site
+              </Button>
+              {/* <Button colored>Live Demo</Button> */}
             </CardActions>
             <CardMenu style={{ color: '#fff' }}>
               <IconButton name="share" />
@@ -70,7 +80,7 @@ class Projects extends Component {
           </Card>
 
           {/* Project 3 */}
-          <Card shadow={5} style={{ minWidth: '450', margin: 'auto' }}>
+          {/* <Card shadow={5} style={{ minWidth: '450', margin: 'auto' }}>
             <CardTitle
               style={{
                 color: '#fff',
@@ -84,8 +94,38 @@ class Projects extends Component {
             <CardText>Coming soon</CardText>
             <CardActions className="button-area" border>
               <Button colored>GitHub</Button>
-              {/* <Button colored>CodePen</Button>
-              <Button colored>Live Demo</Button> */}
+              <Button colored>CodePen</Button>
+              <Button colored>Live Demo</Button>
+            </CardActions>
+            <CardMenu style={{ color: '#fff' }}>
+              <IconButton name="share" />
+            </CardMenu>
+          </Card> */}
+        </div>
+      );
+    } else if (this.state.activeTab === 1) {
+      return (
+        <div className="projects-grid">
+          {/* Project 1 */}
+          <Card shadow={5} style={{ minWidth: '450', margin: 'auto' }}>
+            <CardTitle
+              style={{
+                color: 'black',
+                height: '176px',
+                background:
+                  'url(https://camo.githubusercontent.com/c76b1b55615ece4f4ca8feed725b8e4d5ad334c5ce4ddc27cd4bbcef780b168f/68747470733a2f2f692e696d6775722e636f6d2f663239454339712e706e67) center / 80px no-repeat',
+              }}
+            ></CardTitle>
+            <CardText>Coaches app project to learn Vue</CardText>
+            <CardActions className="button-area" border>
+              <Button
+                colored
+                href="https://github.com/motivated-developer/coaches-app"
+              >
+                GitHub
+              </Button>
+              {/* <Button colored>Visit Site</Button> */}
+              {/* <Button colored>Live Demo</Button> */}
             </CardActions>
             <CardMenu style={{ color: '#fff' }}>
               <IconButton name="share" />
@@ -93,7 +133,7 @@ class Projects extends Component {
           </Card>
         </div>
       );
-    } else if (this.state.activeTab === 1) {
+    } else if (this.state.activeTab === 2) {
       return (
         <div className="projects-grid">
           {/* Project 1 */}
@@ -148,7 +188,7 @@ class Projects extends Component {
           </Card>
 
           {/* Project 3 */}
-          <Card shadow={5} style={{ minWidth: '450', margin: 'auto' }}>
+          {/* <Card shadow={5} style={{ minWidth: '450', margin: 'auto' }}>
             <CardTitle
               style={{
                 color: '#fff',
@@ -162,19 +202,13 @@ class Projects extends Component {
             <CardText>Coming soon</CardText>
             <CardActions className="button-area" border>
               <Button colored>GitHub</Button>
-              {/* <Button colored>CodePen</Button>
-              <Button colored>Live Demo</Button> */}
+              <Button colored>CodePen</Button>
+              <Button colored>Live Demo</Button>
             </CardActions>
             <CardMenu style={{ color: '#fff' }}>
               <IconButton name="share" />
             </CardMenu>
-          </Card>
-        </div>
-      );
-    } else if (this.state.activeTab === 2) {
-      return (
-        <div>
-          <h1>Coming soon</h1>
+          </Card> */}
         </div>
       );
     } else if (this.state.activeTab === 3) {
@@ -194,7 +228,8 @@ class Projects extends Component {
           onChange={(tabId) => this.setState({ activeTab: tabId })}
           ripple
         >
-          <Tab>JavaScript/React</Tab>
+          <Tab>React</Tab>
+          <Tab>Vue</Tab>
           <Tab>Flutter</Tab>
         </Tabs>
 
