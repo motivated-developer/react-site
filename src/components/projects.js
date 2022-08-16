@@ -112,8 +112,7 @@ class Projects extends Component {
               style={{
                 color: 'black',
                 height: '176px',
-                background:
-                  'url(https://camo.githubusercontent.com/c76b1b55615ece4f4ca8feed725b8e4d5ad334c5ce4ddc27cd4bbcef780b168f/68747470733a2f2f692e696d6775722e636f6d2f663239454339712e706e67) center / 80px no-repeat',
+                background: 'url() center / 80px no-repeat',
               }}
             ></CardTitle>
             <CardText>Coaches app project to learn Vue</CardText>
