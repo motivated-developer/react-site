@@ -18,12 +18,15 @@ class Landing extends Component {
 
               <hr />
 
-              <p>JavaScript | React | HTML/CSS | Flutter | Jest | Java | C++</p>
+              <p>
+                JavaScript | TypeScript | React | HTML | CSS | Flutter | Jest |
+                Java | C++
+              </p>
 
               <div className="social-links">
                 {/* Github */}
                 <a
-                  href="https://github.com/Oreo59?tab=repositories"
+                  href="https://github.com/motivated-developer"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -32,7 +35,7 @@ class Landing extends Component {
 
                 {/* LinkedIn */}
                 <a
-                  href="https://www.linkedin.com/in/ryan-charnoky-47831732/"
+                  href="https://www.linkedin.com/in/ryan-charnoky-motivated-developer/"
                   rel="noopener noreferrer"
                   target="_blank"
                 >

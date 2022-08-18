@@ -13,9 +13,9 @@ class Contact extends Component {
               alt="avatar"
               style={{ height: '250px' }}
             />
-            <p style={{ width: '75%', margin: 'auto', paddingTop: '1em' }}>
+            {/* <p style={{ width: '75%', margin: 'auto', paddingTop: '1em' }}>
               Email is the best way to reach me
-            </p>
+            </p> */}
           </Cell>
           <Cell col={6}>
             <h2>Contact Me</h2>

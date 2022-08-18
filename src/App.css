@@ -53,6 +53,10 @@
   padding: 2em;
 }
 
+.display-none {
+  display: none;
+}
+
 /* contact page */
 
 .contact-body {
@@ -156,6 +160,7 @@
 .aboutme-text {
   text-align: center;
   width: 80%;
+  margin: auto;
 }
 
 h2.aboutme-header,
